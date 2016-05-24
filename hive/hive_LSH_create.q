@@ -1,10 +1,5 @@
--- create tables and functions
+-- create tables 
 -- load raw data into raw table
-add jar /home/hadoop/brickhouse/target/brickhouse-0.7.1-SNAPSHOT.jar;
-
-CREATE TEMPORARY FUNCTION combine AS 'brickhouse.udf.collect.CombineUDF';
-CREATE TEMPORARY FUNCTION combine_unique AS 'brickhouse.udf.collect.CombineUniqueUDAF';
-CREATE TEMPORARY FUNCTION array_intersect AS "brickhouse.udf.collect.ArrayIntersectUDF";
 
 CREATE EXTERNAL TABLE raw_shingles (f_id STRING, shingle STRING)
 ROW FORMAT DELIMITED
